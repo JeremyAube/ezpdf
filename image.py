@@ -13,5 +13,8 @@ def create_image(img_names: list, pdf_name: str) -> None:
     for img in img_names:
         img_list.append(Image.open(img))
 
-    img1.save(f'{pdf_name}.pdf', "PDF", resolution=100,
-              save_all=True, append_images=img_list)
+    try:
+        img1.save(f'{pdf_name}.pdf', "PDF", resolution=100,
+                  save_all=True, append_images=img_list)
+    except:
+        print('errpr')

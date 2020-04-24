@@ -61,5 +61,6 @@ class App(tk.Frame):
         self.save_btn.pack(side='bottom')
 
     def save_file(self):
-        create_image(list(self.files), self.pdf_name_value.get())
+        pdf_path = self.pdf_save_location + f'/{self.pdf_name_value.get()}'
+        create_image(list(self.files), pdf_path)
         messagebox.showinfo('Success', 'PDF was created')
